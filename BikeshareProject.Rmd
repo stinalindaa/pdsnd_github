@@ -45,7 +45,7 @@ knitr::opts_chunk$set(echo = TRUE)
 #### Get the maximum weekday with max()
     max(tbl_wday)
     
-#### Results: The chart shows that Wednesdays have had the most bike rentals in all 3 cities combined. The summary statistics show that the highest count of bike rentals is 142,773, which is the count for Wednesdays in the chart. 
+#### Results: The chart shows that Wednesdays have had the most bike rentals in all 3 cities combined. The summary statistics show that the highest count of bike rentals is 142,773, which correlates to the count for Wednesdays in the chart. 
 
 
 ## Question 2
