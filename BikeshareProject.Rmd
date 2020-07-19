@@ -39,11 +39,11 @@ knitr::opts_chunk$set(echo = TRUE)
       scale_y_continuous(breaks = c(seq(0,150000, 20000)))
 
 #### To get summary statistics, create a frequency table from the weekday data
-    tbl_wday = table(all.start$wkdy)
-    tbl_wday
+    tbl_wkdy = table(all.start$wkdy)
+    tbl_wkdy
     
 #### Get the maximum weekday with max()
-    max(tbl_wday)
+    max(tbl_wkdy)
     
 #### Results: The chart shows that Wednesdays have had the most bike rentals in all 3 cities combined. The summary statistics show that the highest count of bike rentals is 142,773, which is the count for Wednesdays in the chart. 
 
