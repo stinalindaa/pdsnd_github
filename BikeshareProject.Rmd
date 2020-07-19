@@ -25,13 +25,13 @@ knitr::opts_chunk$set(echo = TRUE)
     
 #### Create a new dataset of the weekday, month and city for each start time. Weekday Levels: Sun < Mon < Tue < Wed < Thu < Fri < Sat
     month = c(month(chi$Start.Time), month(ny$Start.Time), month(wash$Start.Time))
-    weekday = c(wday(chi$Start.Time), wday(ny$Start.Time), wday(wash$Start.Time))
+    wkdy = c(wday(chi$Start.Time), wday(ny$Start.Time), wday(wash$Start.Time))
     city = c(rep("Chicago", times = dim(chi)[1]), rep("New York", times = dim(ny)[1]), 
              rep("Washington", times = dim(wash)[1]))
-    all.start = data.frame(month, weekday, city)
+    all.start = data.frame(month, wkdy, city)
 
 #### Plot the frequency of each weekday
-    wday_plot = ggplot(aes(x=weekday), data = all.start) +
+    wday_plot = ggplot(aes(x=wkdy), data = all.start) +
       geom_histogram(stat = 'count', color = 'black', fill = 'blue') +
       scale_x_continuous(breaks = c(1:7), labels = c('Sun','Mon','Tue','Wed','Thu','Fri','Sat'))
     
@@ -39,7 +39,7 @@ knitr::opts_chunk$set(echo = TRUE)
       scale_y_continuous(breaks = c(seq(0,150000, 20000)))
 
 #### To get summary statistics, create a frequency table from the weekday data
-    tbl_wday = table(all.start$weekday)
+    tbl_wday = table(all.start$wkdy)
     tbl_wday
     
 #### Get the maximum weekday with max()
@@ -59,7 +59,7 @@ knitr::opts_chunk$set(echo = TRUE)
     
 #### To get summary statistics, create a frequency table from the weekday and month data.  
 
-    tbl_mo.wday = table(all.start$month, all.start$weekday)
+    tbl_mo.wday = table(all.start$month, all.start$wkdy)
     tbl_mo.wday
 
 #### Get the maximum weekday (column) per month (row) with max.col()        
@@ -77,7 +77,7 @@ knitr::opts_chunk$set(echo = TRUE)
       ggtitle('Bike Rentals Per Weekday Per City')
     
 #### To get summary statistics, create a frequency table from the weekday and city data.
-    tbl_cty.wday = table(all.start$city, all.start$weekday)
+    tbl_cty.wday = table(all.start$city, all.start$wkdy)
     tbl_cty.wday        
     
 #### Get the maximum weekday (column) per city (row) with max.col()
