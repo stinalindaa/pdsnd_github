@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = TRUE)
     library(ggplot2)
     library(lubridate)
     
-#### Create a new dataset of the weekday, month and city for each start time. Weekday Levels: Sun < Mon < Tue < Wed < Thu < Fri < Sat
+#### Create a new dataset for weekday, month, and city for each start time in each city. Weekday Levels: Sun < Mon < Tue < Wed < Thu < Fri < Sat
     month = c(month(chi$Start.Time), month(ny$Start.Time), month(wash$Start.Time))
     weekday = c(wday(chi$Start.Time), wday(ny$Start.Time), wday(wash$Start.Time))
     city = c(rep("Chicago", times = dim(chi)[1]), rep("New York", times = dim(ny)[1]), 
