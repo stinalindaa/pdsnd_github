@@ -35,7 +35,7 @@ knitr::opts_chunk$set(echo = TRUE)
       geom_histogram(stat = 'count', color = 'black', fill = 'blue') +
       scale_x_continuous(breaks = c(1:7), labels = c('Sun','Mon','Tue','Wed','Thu','Fri','Sat'))
     
-    wday_plot + ggtitle('Total Bike Rentals in Chicago, Washington and New York') +
+    wday_plot + ggtitle('Bike Rentals: Weekday') +
       scale_y_continuous(breaks = c(seq(0,150000, 20000)))
 
 #### To get summary statistics, create a frequency table from the weekday data
@@ -55,7 +55,7 @@ knitr::opts_chunk$set(echo = TRUE)
 #### Plot the frequency of each weekday per month
 
     wday_plot + facet_wrap(~month) +
-    ggtitle('Bike Rentals Per Weekday Per Month in Chicago, Washington and New York')
+    ggtitle('Bike Rentals: Weekday Per Month')
     
 #### To get summary statistics, create a frequency table from the weekday and month data.  
 
@@ -74,7 +74,7 @@ knitr::opts_chunk$set(echo = TRUE)
   
 #### Plot the weekday per city       
       wday_plot + facet_wrap(~city) +
-      ggtitle('Bike Rentals Per Weekday Per City')
+      ggtitle('Bike Rentals: Weekday Per City')
     
 #### To get summary statistics, create a frequency table from the weekday and city data.
     tbl_cty.wday = table(all.start$city, all.start$wkdy)
